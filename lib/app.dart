@@ -11,7 +11,7 @@ class App extends StatelessWidget {
     return MaterialApp.router(
       title: 'Room Monitoring App',
       theme: lightTheme,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       routerConfig: routes,
       debugShowCheckedModeBanner: false,
       // routeInformationParser: routes.routeInformationParser,

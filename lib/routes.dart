@@ -13,7 +13,7 @@ GoRouter routes = GoRouter(
             path: '/',
             pageBuilder: (_, state) {
               return slideTransition(
-                  state: state, toLeft: false, child: const Home());
+                  state: state, toLeft: false, child: Home());
             },
             routes: const [
               // GoRoute(
