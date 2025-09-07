@@ -1,9 +1,9 @@
 import 'package:go_router/go_router.dart';
+import 'package:my_message_reels_frontend/pages/home.dart';
 import 'package:provider/provider.dart';
 import 'package:my_message_reels_frontend/controllers/controllers.dart';
 import 'package:my_message_reels_frontend/shared/page_transitions/page_transitions.dart';
 import 'package:my_message_reels_frontend/ui/ui.dart';
-import 'pages/pages.dart';
 
 GoRouter routes = GoRouter(
   routes: [
@@ -13,12 +13,7 @@ GoRouter routes = GoRouter(
             path: '/',
             pageBuilder: (_, state) {
               return slideTransition(
-                state: state,
-                toLeft: false,
-                child: Home(
-                  key: state.pageKey,
-                ),
-              );
+                  state: state, toLeft: false, child: const Home());
             },
             routes: const [
               // GoRoute(
