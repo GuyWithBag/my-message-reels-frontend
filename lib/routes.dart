@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_message_reels_frontend/pages/home.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +14,7 @@ GoRouter routes = GoRouter(
             path: '/',
             pageBuilder: (_, state) {
               return slideTransition(
-                  state: state, toLeft: false, child: Home());
+                  state: state, toLeft: false, child: const Home());
             },
             routes: const [
               // GoRoute(
@@ -56,7 +57,10 @@ GoRouter routes = GoRouter(
           ],
           builder: (context, _) {
             return AppScaffold(
-              child: child,
+              sliver: SliverPadding(
+                sliver: SliverToBoxAdapter(child: child),
+                padding: const EdgeInsets.all(8),
+              ),
             );
           },
         );

@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:provider/provider.dart';
 import 'package:my_message_reels_frontend/controllers/controllers.dart';
-import 'package:my_message_reels_frontend/shared/themes/colors.dart';
 import 'package:my_message_reels_frontend/ui/ui.dart';
-import 'package:my_message_reels_frontend/widgets/widgets.dart';
 
 class AppScaffold extends HookWidget {
-  final Widget child;
-  const AppScaffold({super.key, required this.child});
+  // Child has to be slivers
+  final Widget sliver;
+  const AppScaffold({super.key, required this.sliver});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +32,21 @@ class AppScaffold extends HookWidget {
             ),
           ];
         },
-        body: child,
+        body: SafeArea(
+          top: false,
+          bottom: false,
+          child: Builder(builder: (context) {
+            return CustomScrollView(
+              slivers: <Widget>[
+                SliverOverlapInjector(
+                  handle:
+                      NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+                ),
+                sliver
+              ],
+            );
+          }),
+        ),
       ),
     );
   }

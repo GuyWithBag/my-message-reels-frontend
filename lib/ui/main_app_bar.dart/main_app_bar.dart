@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:my_message_reels_frontend/controllers/app_bar_controller.dart';
-import 'package:my_message_reels_frontend/widgets/widgets.dart';
-
-import '../../shared/themes/colors.dart';
+// import 'package:my_message_reels_frontend/widgets/widgets.dart';
 
 Widget buildAppBar(BuildContext context, {bool forceElevated = false}) {
   AppBarController notifier = context.watch<AppBarController>();
@@ -12,16 +10,15 @@ Widget buildAppBar(BuildContext context, {bool forceElevated = false}) {
     forceElevated: forceElevated,
     expandedHeight: 80,
     pinned: notifier.state.pinned,
-    backgroundColor: primaryGreen[500],
     flexibleSpace: FlexibleSpaceBar(
       title: Row(
         children: [
-          const BackIconButton(),
-          const SizedBox(
-            width: 10,
-          ),
+          // const BackIconButton(),
+          // const SizedBox(
+          //   width: 10,
+          // ),
           SelectableText(
-            notifier.state.title ?? '',
+            'Message Reels',
             style: Theme.of(context).textTheme.titleSmall,
           ),
         ],

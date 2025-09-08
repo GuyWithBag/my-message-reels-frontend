@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:provider/provider.dart';
 import 'package:my_message_reels_frontend/controllers/controllers.dart';
-import 'package:my_message_reels_frontend/shared/themes/colors.dart';
 
 class AppPage extends HookWidget {
   final Widget? child;
@@ -40,11 +39,10 @@ class AppPage extends HookWidget {
         nav.callOnPopScopeListeners(context);
       },
       child: Container(
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(
             Radius.circular(20),
           ),
-          color: primaryGreen[500],
         ),
         child: child ?? const SizedBox(),
       ),
